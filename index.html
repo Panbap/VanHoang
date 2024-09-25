@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc Mừng Sinh Nhật</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Chúc Mừng Sinh Nhật!</h1>
+        <img src="image/h2.PNG" class="cartoon-image">
+        <p>Chúc bạn có một ngày sinh nhật thật vui vẻ và đầy màu sắc!</p>
+        <div id="message" class="hidden"></div>
+        <audio id="birthdayMusic" loop muted>
+            <source src="cmsn.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <div class="characters">
+            <img src="https://gamek.mediacdn.vn/133514250583805952/2020/1/12/anh-20-15788362207191662723912.gif" class="character" id="character1">
+            <img src="https://img-cdn.2game.vn/pictures/2game/2016/11/17/Bien-thai-me-gai-anime-2_pp_285.gif" class="character" id="character2">
+        </div>
+        
+    </div>
+    <img src="https://img.tripi.vn/cdn-cgi/image/width=700,height=700/https://gcs.tripi.vn/public-tripi/tripi-feed/img/474088kek/hinh-anh-dong-danh-cho-sinh-nhat_114936536.gif" alt="Cartoon Birthday" class="cartoon-image">
+    <div>
+
+    </div>
+    <script src="script.js"></script>
+    <script>
+        window.onload = function() {
+            const music = document.getElementById('birthdayMusic');
+
+            // Thêm sự kiện click để phát nhạc
+            document.body.addEventListener('click', function() {
+                music.muted = false; // Bỏ tắt tiếng
+                music.play(); // Phát nhạc
+                startTyping(); // Gọi hàm để bắt đầu hiển thị lời chúc
+                document.body.removeEventListener('click', arguments.callee); // Xóa sự kiện sau khi nhạc đã phát
+            });
+        };
+    </script>
+</body>
+</html>
